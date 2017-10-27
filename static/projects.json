@@ -1,0 +1,22 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "name": "Testoni",
+      "description": "description of Testoni",
+      "headerBg": "testoni.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Barry",
+      "description": "description of Barry",
+      "headerBg": "barry.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Jersey",
+      "description": "description of Jersey",
+      "headerBg": "skate.jpg"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+.text-bar {
+  color: transparent;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  transition: all 0s 0.3s;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    height: 100%;
+    width: 150%;
+    background: #ffffff;
+    z-index: 2;
+    transition: all 1s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+  }
+
+  &.active {
+    transition: all 0s 0.3s;
+    color: #ffffff;
+
+    &:after {
+      left: 150%;
+      transition: all 1s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+    }
+  }
+}
+
+h1.text-bar, h2.text-bar {
+  color: transparent;
+}
+
+
+.btn {
+  border: 2px solid white;
+  display: inline-block;
+  background: transparent;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+}
