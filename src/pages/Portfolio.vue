@@ -43,6 +43,10 @@ export default {
     this.startSlide();
   },
 
+  destroyed: function() {
+      this.stopSlide();
+  },
+
   methods: {
 
     openProjectInfo: function(projectToOpen) {

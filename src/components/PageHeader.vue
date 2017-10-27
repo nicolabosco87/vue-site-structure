@@ -1,8 +1,8 @@
 <template>
   <div class="header__links">
-    <a class="header__site" href="#">SITE NAME</a>
-    <a class="header__back" href="#">BACK</a>
-    <a class="header__credits" href="#">CREDITS</a>
+    <router-link class="header__site" to="/">SITE NAME</router-link>
+    <!--<router-link class="header__back" to="#">BACK</router-link>-->
+    <router-link class="header__credits" to="/credits">CREDITS</router-link>
   </div>
 </template>
 
@@ -13,15 +13,31 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style>
+<style scoped lang="scss">
+
+  .header__links {
+    router-link {
+      color: #ffffff;
+      text-decoration: none;
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
+
   .header__site {
     position: fixed;
     top: 20px;
     left: 20px;
+    z-index: 10;
+
+
   }
 
   .header__back {
     position: fixed;
+    z-index: 10;
     top: 20px;
     left: 50%;
     transform: translateX(-50%);
@@ -29,6 +45,7 @@ export default {
 
   .header__credits {
     position: fixed;
+    z-index: 10;
     top: 20px;
     right: 20px;
   }
