@@ -16,7 +16,10 @@ export default {
 <style scoped lang="scss">
 
   .header__links {
-    router-link {
+    position: relative;
+    z-index: 10;
+
+    > * {
       color: #ffffff;
       text-decoration: none;
 
@@ -31,8 +34,6 @@ export default {
     top: 20px;
     left: 20px;
     z-index: 10;
-
-
   }
 
   .header__back {

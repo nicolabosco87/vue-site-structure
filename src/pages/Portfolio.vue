@@ -1,7 +1,7 @@
 <template>
   <div class="portfolio">
 
-    <Project :info="item" :opened="activeProjectInfo == item"
+    <Project :key="item.id" :info="item" :opened="activeProjectInfo == item"
              :openProjectInfo="openProjectInfo" :closeProjectInfo="closeProjectInfo"
              v-for="item in projects" :style="{ 'z-index': calculateZIndex(item)  }" :id="'project-'+item.id" ></Project>
 

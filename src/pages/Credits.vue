@@ -34,8 +34,18 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped >
+<style scoped lang="scss" >
 
+  .credits {
+    padding: 60px 30px;
+    background-image: url(../assets/img/norway.jpg);
+    height: 100vh;
+    color: white;
+
+    h2 {
+      color: white;
+    }
+  }
 
 
 </style>
