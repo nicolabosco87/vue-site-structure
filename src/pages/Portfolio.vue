@@ -9,6 +9,7 @@
 </template>
 
 <script>
+import DefaultPage from './DefaultPage.vue'
 
 import {TweenMax, TweenLite, Power2, TimelineLite} from "gsap"
 //import { ScrollToPlugin } from "gsap/ScrollToPlugin"
@@ -22,6 +23,7 @@ const TIMER = 5000;
 
 export default {
   name: 'portfolio',
+  extends: DefaultPage,
 
   data: function() {
     return {

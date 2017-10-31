@@ -3186,10 +3186,6 @@ istanbul@^0.4.0:
     which "^1.1.1"
     wordwrap "^1.0.0"
 
-jquery@^3.2.1:
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.2.1.tgz#5c4d9de652af6cd0a770154a631bba12b015c787"
-
 js-base64@^2.1.8:
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/js-base64/-/js-base64-2.3.2.tgz#a79a923666372b580f8e27f51845c6f7e8fbfbaf"
@@ -5830,6 +5826,10 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
 
+typesplit@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/typesplit/-/typesplit-1.0.0.tgz#1eaa931a89860241dcfa1fff3f3dc7b8fc8d4854"
+
 uglify-es@^3.0.25:
   version "3.0.28"
   resolved "https://registry.yarnpkg.com/uglify-es/-/uglify-es-3.0.28.tgz#1cdedbbcdb7865223065281ad7b2347629851d4b"
@@ -6027,6 +6027,10 @@ vue-loader@^12.1.0:
     vue-hot-reload-api "^2.1.0"
     vue-style-loader "^3.0.0"
     vue-template-es2015-compiler "^1.2.2"
+
+vue-parallaxy@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/vue-parallaxy/-/vue-parallaxy-1.0.3.tgz#092b903f37ba59ecda8f484756c0374d31a04313"
 
 vue-router@^2.3.1:
   version "2.7.0"

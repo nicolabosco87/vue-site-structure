@@ -9,13 +9,14 @@
         </svg>
       </div>
       <transition name="fade" v-on:enter="enter" >
-        <router-view></router-view>
+        <router-view ref="router" ></router-view>
       </transition>
     </main>
   </div>
 </template>
 
 <script>
+  import Vue from 'vue'
   import PageHeader from './components/PageHeader.vue'
   import {TweenMaxLite, Power2, TimelineLite} from "gsap"
   import CustomEase from  './lib/gsap/CustomEase'
@@ -23,22 +24,50 @@
   require('../node_modules/normalize.css/normalize.css')
   require('./assets/sass/global.scss')
 
+  const EventBus = new Vue();
+
+  // Add to Vue properties by exposing a getter for $bus
+  Object.defineProperties(Vue.prototype, {
+    $bus: {
+      get: function () {
+        return EventBus;
+      }
+    }
+  });
+
 export default {
   name: 'app',
+  data: function() {
+      return {
+      }
+  },
+
+  mounted: function() {
+    this.$bus.$emit('init-page-transition-animations', true);
+  },
+
   components: {
     PageHeader
   },
 
   methods: {
 
+      launchAnimations: function() {
+        this.$bus.$emit('init-page-transition-animations', true);
+      },
+
+
       enter: function(el, done) {
           let pageTransitionLoader = document.querySelector('.page-transition-loader'),
             pageTransitionLoaderLogo = document.querySelector('.page-transition-loader svg'),
             pageTransitionLoaderBg = document.querySelector('.page-transition-loader__bg'),
             tl = new TimelineLite({
-              onComplete: done,
-              ease: CustomEase.create("custom", "M0,0 C0.13,0.127 0.5,-0.054 0.5,0.5 0.5,0.996 0.861,0.858 1,1")
+              onComplete: () => {
+                  done();
+                  this.launchAnimations();
+              }
             }),
+
             duration = 0.8;
 
           // Transition block animation
@@ -47,10 +76,10 @@ export default {
 
           // White bg animation
           tl.fromTo(pageTransitionLoaderBg, duration/3, {left: 0, right: 'auto', width: '0%'}, {width: '30%'}, 0);
-          tl.to(pageTransitionLoaderBg, duration/3, {width: '0%'}, 0.5);
+          tl.to(pageTransitionLoaderBg, duration/3, {left: 0, right: 'auto', width: '0%'}, 0.5);
           tl.to(pageTransitionLoaderBg, 0, {left: 'auto', right: 0, width: '0%'}, 1.8);
-          tl.to(pageTransitionLoaderBg, duration/3, {width: '30%'}, 2);
-          tl.to(pageTransitionLoaderBg, duration/3, {width: '0%'}, 2 + (duration/3));
+          tl.to(pageTransitionLoaderBg, duration/3, {left: 'auto', right: 0, width: '30%'}, 2);
+          tl.to(pageTransitionLoaderBg, duration/3, {left: 'auto', right: 0, width: '0%'}, 2.5);
 
           // Transition Logo animation
           tl.fromTo(pageTransitionLoaderLogo, (duration - 0.2), {opacity: 0}, {opacity: 0}, 0);
@@ -67,12 +96,12 @@ export default {
   .fade-enter-active, .fade-leave-active {
     transition: all;
     transition-duration: 0s;
-    transition-delay: 1s;
+    transition-delay: 2s;
     z-index: 5;
   }
 
   .fade-enter-active {
-    transition-delay: 1s;
+    transition-delay: 2s;
   }
 
   .fade-enter, .fade-leave-active {

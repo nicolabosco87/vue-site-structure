@@ -1,18 +1,18 @@
 <template>
   <div class="credits">
 
-    <h2 class="credits__label">
-      Site structure by Nicola Bosco
-    </h2>
+    <SplitTitle class="credits__label" title="Site structure by Nicola Bosco" ></SplitTitle>
 
   </div>
 </template>
 
 <script>
-
+import DefaultPage from './DefaultPage.vue'
+import SplitTitle from '../components/SplitTitle.vue';
 
 export default {
   name: 'credits',
+  extends: [DefaultPage],
 
   data: function() {
     return {
@@ -29,6 +29,7 @@ export default {
 
 
   components: {
+    SplitTitle
   }
 }
 </script>
@@ -42,7 +43,8 @@ export default {
     height: 100vh;
     color: white;
 
-    h2 {
+    h1 {
+      margin-top: 50px;
       color: white;
     }
   }
